@@ -23,7 +23,7 @@ const customStyles = {
 
 const TabContainer = function(props) {
     return(
-        <Typography component='div' style={{padding: 0}}>
+        <Typography component='div' style={{padding: 0, textAlign: 'center'}}>
             {props.children}
         </Typography>
     );
@@ -63,7 +63,7 @@ class Header extends Component {
                 </header>
                 <Modal ariaHideApp={false} isOpen={this.state.modalIsOpen} contentLabel="Login" 
                 onRequestClose={this.closeModalHandler} style={customStyles}>
-                    <Tabs value={this.state.value} onChange={this.tabChangeHandler}>
+                    <Tabs className='tabs' value={this.state.value} onChange={this.tabChangeHandler}>
                         <Tab label="Login" />
                         <Tab label="Register" />
                     </Tabs>
@@ -71,11 +71,12 @@ class Header extends Component {
                         <FormControl required>
                             <InputLabel htmlFor='username'>Username</InputLabel>
                             <Input id='username' type='text'></Input>
-                        </FormControl>
+                        </FormControl><br/><br/>
                         <FormControl required>
                             <InputLabel htmlFor='password'>Password</InputLabel>
                             <Input id='password' type='password'></Input>
-                        </FormControl>
+                        </FormControl><br/><br/>
+                        <Button variant='contained' color='primary'>LOGIN</Button>
                     </TabContainer>
                 </Modal>
             </div>
